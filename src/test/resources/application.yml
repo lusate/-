@@ -1,0 +1,25 @@
+#spring:
+#  datasource:
+    #url을 메모리로 바꿈
+#    url: jdbc:h2:mem:test
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
+
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
+#    properties:
+#      hibernate:
+        #show_sql: true
+#        format_sql: true
+
+logging:
+  level:
+    org.hibernate.SQL : debug
+    org.hibernate.type : trace
+
+
+# DB(H2)를 외부에 설치하는 불편함 없애기 위해, 테스트가 끝나면 기본적으로 초기화되는 것이 좋음
+# 테스트를 완전 격리된 환경, 자바 안에 살짝 DB를 새로 만들어서 띄우는 방법으로
+#메모리 DB를 사용 (Spring Boot로)
